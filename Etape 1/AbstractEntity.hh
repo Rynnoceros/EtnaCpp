@@ -3,10 +3,8 @@
 
 class AbstractEntity 
 {
-    protected:
-        AbstractEntity();
-
     public:
+        AbstractEntity();
         virtual ~AbstractEntity();
 
     protected:
