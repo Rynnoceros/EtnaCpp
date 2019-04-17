@@ -5,22 +5,23 @@
 ##      Makefile for Etape1.
 ##
 
-CCFLAGS 		= -W -Wall -Werror -shared
+CCFLAGS 		= -Wextra -Wall -Werror 
 CC 				= g++
 SRC				= $(shell ls *.cpp)
 PROG_NAME		=  main
 RM				= rm -f
+OBJ				= $(SRC:.cpp=.o)
 
 all: $(PROG_NAME)
 
-$(PROG_NAME):
-	$(CC) $(CCFLAGS) -o $(PROG_NAME) $(SRC)
+$(PROG_NAME): $(OBJ)
+	$(CC) $(CCFLAGS) $(OBJ) -o $(PROG_NAME)
 
 clean: 
-	$(RM) 
+	$(RM) $(OBJ)
 
-fclean: clean cleanlink
-	$(RM) $(LIB_NAME)
+fclean: clean 
+	$(RM) $(PROG_NAME)
 
 re: fclean all
 

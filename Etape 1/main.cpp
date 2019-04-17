@@ -7,9 +7,11 @@
 //
 
 #include <stdio.h>
+#include <iostream>
 #include "AbstractEntity.hh"
 
-int main(void)
+int main(int argc, char* argv[])
 {
+    std::cout << "Hello" << std::endl;
     return 0;
 }
