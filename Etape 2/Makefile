@@ -5,7 +5,7 @@
 ##      Makefile for Etape1.
 ##
 
-CCFLAGS 		= -Wextra -Wall -Werror 
+CCFLAGS 		= -Wextra -Wall -Werror
 CC 				= g++
 SRC				= $(shell ls *.cpp)
 PROG_NAME		=  main

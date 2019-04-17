@@ -4,11 +4,11 @@ AbstractEntity::AbstractEntity()
 {
 }
 
-void Draw()
+void AbstractEntity::Draw()
 {
 }
 
-void Update()
+void AbstractEntity::Update()
 {
 }
 

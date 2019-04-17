@@ -11,6 +11,8 @@ class Character : public AbstractEntity {
     protected:
         Character();
         virtual ~Character();
+        virtual void Draw() override;
+        virtual void Update() override;
         double GetX() const;
         double GetY() const;
         void SetX(double);

@@ -34,6 +34,16 @@ void Character::SetLife(int life)
     this->_life = life;
 }
 
+void Character::Draw()
+{
+    AbstractEntity::Draw();
+}
+
+void Character::Update()
+{
+    AbstractEntity::Update();
+}
+
 Character::~Character()
 {
 }
