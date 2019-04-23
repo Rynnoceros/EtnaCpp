@@ -19,6 +19,8 @@ class TimeManager {
         unsigned int GetStartedTime() const;
 
     public:
+        TimeManager(const TimeManager&) = delete;
+        TimeManager& operator=(const TimeManager&) = delete;
         static TimeManager *GetInstance();
 
 };
