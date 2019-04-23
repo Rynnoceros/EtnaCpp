@@ -13,13 +13,15 @@ void TimeManager::Start() {
 }
 
 void TimeManager::Update() {
-    _elapsedTime = std::chrono::system_clock::now() - _lastUpdate;
-    _elapsedStart = _lastUpdate - _lastStart;
+    if (_lastUpdate != std::chrono::system_clock::time_point::min()) {
+        _elapsedTime = std::chrono::system_clock::now() - _lastUpdate;
+        _elapsedStart = _lastUpdate - _lastStart;
+    }
     _lastUpdate = std::chrono::system_clock::now();
 }
 
 unsigned int TimeManager::GetElapsedTime() const {
-    if (_lastUpdate != std::chrono::system_clock::time_point::min()) {
+    if (_elapsedTime != std::chrono::duration<double>::min()) {
         return _elapsedTime.count();
     } else {
         return 0;
@@ -28,7 +30,7 @@ unsigned int TimeManager::GetElapsedTime() const {
 }
 
 unsigned int TimeManager::GetStartedTime() const {
-    if (_lastStart != std::chrono::system_clock::time_point::min()) {
+    if (_elapsedStart != std::chrono::duration<double>::min()) {
         return _elapsedStart.count();
     } else {
         return 0;
