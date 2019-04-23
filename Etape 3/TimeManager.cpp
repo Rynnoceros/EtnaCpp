@@ -19,7 +19,12 @@ void TimeManager::Update() {
 }
 
 unsigned int TimeManager::GetElapsedTime() const {
-    return _elapsedTime.count();
+    if (_lastUpdate != std::chrono::system_clock::time_point::min()) {
+        return _elapsedTime.count();
+    } else {
+        return 0;
+    }
+    
 }
 
 unsigned int TimeManager::GetStartedTime() const {
