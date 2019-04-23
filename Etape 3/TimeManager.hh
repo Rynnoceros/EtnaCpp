@@ -10,14 +10,12 @@ class TimeManager {
         std::chrono::duration<double> _elapsedStart;
         TimeManager();
 
-    protected:
+    public:
         virtual ~TimeManager();
         void Start();
         void Update();
         unsigned int GetElapsedTime() const;
         unsigned int GetStartedTime() const;
-
-    public:
         TimeManager(const TimeManager&) = delete;
         TimeManager& operator=(const TimeManager&) = delete;
         static TimeManager &GetInstance() {
