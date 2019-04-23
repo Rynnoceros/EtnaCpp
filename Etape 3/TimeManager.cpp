@@ -28,5 +28,9 @@ unsigned int TimeManager::GetElapsedTime() const {
 }
 
 unsigned int TimeManager::GetStartedTime() const {
-    return _elapsedStart.count();
+    if (_lastStart != std::chrono::system_clock::time_point::min()) {
+        return _elapsedStart.count();
+    } else {
+        return 0;
+    }
 }
