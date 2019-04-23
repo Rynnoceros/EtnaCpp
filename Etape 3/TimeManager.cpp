@@ -15,9 +15,9 @@ void TimeManager::Start() {
 void TimeManager::Update() {
     if (_lastUpdate != std::chrono::system_clock::time_point::min()) {
         _elapsedTime = std::chrono::system_clock::now() - _lastUpdate;
-        _elapsedStart = _lastUpdate - _lastStart;
     }
     _lastUpdate = std::chrono::system_clock::now();
+    _elapsedStart = _lastUpdate - _lastStart;
 }
 
 unsigned int TimeManager::GetElapsedTime() const {
