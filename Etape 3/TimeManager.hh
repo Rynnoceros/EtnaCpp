@@ -4,7 +4,6 @@
 
 class TimeManager {
     private:
-        static TimeManager *_instance;
         std::chrono::system_clock::time_point _lastStart;
         std::chrono::system_clock::time_point _lastUpdate;
         std::chrono::duration<double> _elapsedTime;
@@ -19,9 +18,9 @@ class TimeManager {
         unsigned int GetStartedTime() const;
 
     public:
-        TimeManager(const TimeManager&) = delete;
-        TimeManager& operator=(const TimeManager&) = delete;
-        static TimeManager *GetInstance();
-
+        static TimeManager &GetInstance() {
+            static TimeManager _instance;
+            return _instance;
+        };
 };
 #endif

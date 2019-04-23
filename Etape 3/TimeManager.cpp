@@ -1,20 +1,11 @@
 #include "TimeManager.hh"
 
-TimeManager *TimeManager::_instance = nullptr;
-
 TimeManager::TimeManager() {
 
 }
 
 TimeManager::~TimeManager() {
 
-}
-
-TimeManager *TimeManager::GetInstance() {
-    if (_instance == nullptr) {
-        _instance = new TimeManager();
-    }
-    return _instance;
 }
 
 void TimeManager::Start() {
