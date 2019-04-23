@@ -2,7 +2,7 @@
 ## ETNA PROJECT, 17/04/2019 by soubri_j
 ## Makeflile
 ## File description: 
-##      Makefile for Etape2.
+##      Makefile for Etape3.
 ##
 
 CCFLAGS 		= -Wextra -Wall -Werror
