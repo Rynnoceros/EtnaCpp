@@ -2,6 +2,7 @@
 #include "TimeManager.hh"
 
 SprinterMonster::SprinterMonster() {
+    TimeManager::GetInstance().Start();
     SetLife(25);
 }
 
@@ -14,12 +15,9 @@ void SprinterMonster::Draw() {
 
 void SprinterMonster::Update() {
     Character::Update();
-    unsigned int elapsedTime = 0;
-    TimeManager::GetInstance().Start();
-    while (elapsedTime < 1000) {
-        TimeManager::GetInstance().Update();
-        elapsedTime = TimeManager::GetInstance().GetStartedTime();
-    }
-    SetX(GetX() + 5);
-    SetY(GetY() + 5);
+    TimeManager::GetInstance().Update();
+    unsigned int elapsedTime = TimeManager::GetInstance().GetStartedTime();
+    double deplacement = elapsedTime / 1000 * 5;
+    SetX(GetX() + deplacement);
+    SetY(GetY() + deplacement);
 }
