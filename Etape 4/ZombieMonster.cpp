@@ -2,6 +2,7 @@
 #include "TimeManager.hh"
 
 ZombieMonster::ZombieMonster() {
+    TimeManager::GetInstance().Start();
     SetLife(100);
 }
 

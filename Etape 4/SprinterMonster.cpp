@@ -2,6 +2,7 @@
 #include "TimeManager.hh"
 
 SprinterMonster::SprinterMonster() {
+    TimeManager::GetInstance().Start();
     SetLife(25);
 }
 
