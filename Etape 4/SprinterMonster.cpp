@@ -15,7 +15,7 @@ void SprinterMonster::Draw() {
 
 void SprinterMonster::Update() {
     TimeManager::GetInstance().Update();
-    unsigned int elapsedTime = TimeManager::GetInstance().GetElapsedTime();
+    unsigned int elapsedTime = TimeManager::GetInstance().GetStartedTime();
     double deplacement = elapsedTime;
     deplacement *= 5;
     deplacement /= 1000;
