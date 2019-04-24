@@ -17,7 +17,7 @@ void SprinterMonster::Draw() {
 void SprinterMonster::Update() {
     TimeManager::GetInstance().Update();
     unsigned int elapsedTime = TimeManager::GetInstance().GetElapsedTime();
-    std::cout << "elapsed time : " << elapsedTime << std::endl;
+    std::cout << " Sprinter zombie : elapsed time : " << elapsedTime << std::endl;
     double deplacement = elapsedTime;
     deplacement *= 5;
     deplacement /= 1000;

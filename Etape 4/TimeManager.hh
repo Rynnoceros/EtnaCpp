@@ -6,7 +6,7 @@ class TimeManager {
     private:
         std::chrono::system_clock::time_point _lastStart = std::chrono::system_clock::time_point::min();
         std::chrono::system_clock::time_point _lastUpdate = std::chrono::system_clock::time_point::min();
-        std::chrono::duration<double> _elapsedTime = std::chrono::duration<double>::min();
+        std::chrono::system_clock::time_point _previousUpdate = std::chrono::system_clock::time_point::min();
         TimeManager();
 
     public:
