@@ -1,10 +1,8 @@
 #include "SprinterMonster.hh"
 #include "TimeManager.hh"
-#include <iostream>
 
 SprinterMonster::SprinterMonster() {
-    std::cout << " SPrinter zombie start: " << std::endl;
-    TimeManager::GetInstance().Start();
+    //TimeManager::GetInstance().Start();
     SetLife(25);
 }
 
@@ -18,7 +16,6 @@ void SprinterMonster::Draw() {
 void SprinterMonster::Update() {
     TimeManager::GetInstance().Update();
     unsigned int elapsedTime = TimeManager::GetInstance().GetElapsedTime();
-    std::cout << " Sprinter zombie : elapsed time : " << elapsedTime << std::endl;
     double deplacement = elapsedTime;
     deplacement *= 5;
     deplacement /= 1000;
