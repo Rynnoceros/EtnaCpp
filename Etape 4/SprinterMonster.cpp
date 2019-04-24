@@ -3,6 +3,7 @@
 #include <iostream>
 
 SprinterMonster::SprinterMonster() {
+    std::cout << " SPrinter zombie start: " << std::endl;
     TimeManager::GetInstance().Start();
     SetLife(25);
 }

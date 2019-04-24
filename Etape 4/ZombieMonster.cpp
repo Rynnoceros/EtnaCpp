@@ -3,6 +3,7 @@
 #include <iostream>
 
 ZombieMonster::ZombieMonster() {
+    std::cout << " Monster zombie start: " << std::endl;
     TimeManager::GetInstance().Start();
     SetLife(100);
 }
