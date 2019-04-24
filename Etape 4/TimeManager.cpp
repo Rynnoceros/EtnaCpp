@@ -1,16 +1,15 @@
 #include "TimeManager.hh"
 
 TimeManager::TimeManager() {
-
 }
 
 TimeManager::~TimeManager() {
-
 }
 
 void TimeManager::Start() {
     _lastStart = std::chrono::system_clock::now();
     _lastUpdate = std::chrono::system_clock::time_point::min();
+    _elapsedTime = _lastUpdate - _lastUpdate;
 }
 
 void TimeManager::Update() {
