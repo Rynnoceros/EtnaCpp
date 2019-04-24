@@ -9,7 +9,6 @@ ZombieMonster::~ZombieMonster() {
 }
 
 void ZombieMonster::Update() {
-    Character::Update();
     TimeManager::GetInstance().Update();
     unsigned int elapsedTime = TimeManager::GetInstance().GetElapsedTime();
     double deplacement = elapsedTime;
