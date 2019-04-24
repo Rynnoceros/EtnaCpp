@@ -10,6 +10,7 @@ TimeManager::~TimeManager() {
 
 void TimeManager::Start() {
     _lastStart = std::chrono::system_clock::now();
+    _elapsedStart = _lastStart - _lastStart;
 }
 
 void TimeManager::Update() {
