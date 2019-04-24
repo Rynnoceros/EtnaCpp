@@ -22,7 +22,7 @@ void TimeManager::Update() {
 
 unsigned int TimeManager::GetElapsedTime() const {
     if (_elapsedTime != std::chrono::duration<double>::min()) {
-        return _elapsedTime.count();
+        return _elapsedTime.count() * 1000;
     } else {
         return 0;
     }
@@ -31,5 +31,5 @@ unsigned int TimeManager::GetElapsedTime() const {
 
 unsigned int TimeManager::GetStartedTime() const {
     std::chrono::duration<double> startedTime = _lastUpdate - _lastStart;
-    return startedTime.count();
+    return startedTime.count() * 1000;
 }
