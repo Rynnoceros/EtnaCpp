@@ -10,12 +10,14 @@ TimeManager::~TimeManager() {
 
 void TimeManager::Start() {
     _lastStart = std::chrono::system_clock::now();
-    _lastUpdate = std::chrono::system_clock::time_point::min();
+    //_lastUpdate = std::chrono::system_clock::time_point::min();
 }
 
 void TimeManager::Update() {
     if (_lastUpdate != std::chrono::system_clock::time_point::min()) {
         _elapsedTime = std::chrono::system_clock::now() - _lastUpdate;
+    } else {
+        _elapsedTime = std::chrono::system_clock::now() - _lastStart;
     }
     _lastUpdate = std::chrono::system_clock::now();
 }
