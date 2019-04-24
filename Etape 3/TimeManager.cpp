@@ -31,13 +31,9 @@ unsigned int TimeManager::GetElapsedTime() const {
 }
 
 unsigned int TimeManager::GetStartedTime() const {
-    if (_lastStart == std::chrono::system_clock::time_point::min()) {
-        return 0;
+    if (_lastUpdate == std::chrono::system_clock::time_point::min()) {
+        return (std::chrono::system_clock::now() - _lastStart).count();
     } else {
-        if (_lastUpdate == std::chrono::system_clock::time_point::min()) {
-            return (std::chrono::system_clock::now() - _lastStart).count();
-        } else {
-            return _elapsedStart.count();
-        }
+        return _elapsedStart.count();
     }
 }
