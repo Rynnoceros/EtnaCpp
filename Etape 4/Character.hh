@@ -8,7 +8,7 @@ class Character : public AbstractEntity {
         double _y;
         int _life;
 
-    protected:
+    public:
         Character();
         virtual ~Character();
         virtual void Draw() override;
