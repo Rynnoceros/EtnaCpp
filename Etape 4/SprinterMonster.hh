@@ -3,7 +3,7 @@
 #include "Character.hh"
 
 class SprinterMonster : public Character {
-    protected:
+    public:
         SprinterMonster();
         virtual ~SprinterMonster();
         virtual void Draw() override;

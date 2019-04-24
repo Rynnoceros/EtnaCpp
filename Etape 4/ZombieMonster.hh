@@ -3,7 +3,7 @@
 #include "Character.hh"
 
 class ZombieMonster : public Character {
-    protected:
+    public:
         ZombieMonster();
         virtual ~ZombieMonster();
         virtual void Draw() override;

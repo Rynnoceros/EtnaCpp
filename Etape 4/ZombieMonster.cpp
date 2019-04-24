@@ -6,7 +6,6 @@ ZombieMonster::ZombieMonster() {
 }
 
 ZombieMonster::~ZombieMonster() {
-    Character::~Character();
 }
 
 void ZombieMonster::Update() {

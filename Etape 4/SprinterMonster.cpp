@@ -6,7 +6,6 @@ SprinterMonster::SprinterMonster() {
 }
 
 SprinterMonster::~SprinterMonster() {
-    Character::~Character();
 }
 
 void SprinterMonster::Draw() {
