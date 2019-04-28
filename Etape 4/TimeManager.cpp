@@ -6,6 +6,12 @@ TimeManager::TimeManager() {
 TimeManager::~TimeManager() {
 }
 
+TimeManager& TimeManager::GetInstance()
+{
+    static TimeManager _instance;
+    return _instance;
+}
+
 void TimeManager::Start() {
     _lastStart = std::chrono::system_clock::now();
     _updateStart = std::chrono::system_clock::now();
