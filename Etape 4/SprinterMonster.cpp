@@ -15,7 +15,6 @@ void SprinterMonster::Draw() {
 }
 
 void SprinterMonster::Update() {
-    TimeManager::GetInstance().Update();
     unsigned int elapsedTime = TimeManager::GetInstance().GetElapsedTime();
     this->SetX(this->GetX() + 5*(elapsedTime/1000.0));
     this->SetY(this->GetY() + 5*(elapsedTime/1000.0));

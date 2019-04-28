@@ -8,15 +8,15 @@ class TimeManager {
         std::chrono::system_clock::time_point _updateStart;
         std::chrono::system_clock::time_point _update;
         TimeManager();
-        TimeManager(TimeManager&);
         virtual ~TimeManager();
-        void operator=(const TimeManager&);
 
     public:
         void Start();
         void Update();
         unsigned int GetElapsedTime() const;
-        unsigned int GetStartedTime() const;       
+        unsigned int GetStartedTime() const;
+        TimeManager(const TimeManager&) = delete;
+        TimeManager& operator=(const TimeManager&) = delete;
         static TimeManager &GetInstance();
 };
 #endif

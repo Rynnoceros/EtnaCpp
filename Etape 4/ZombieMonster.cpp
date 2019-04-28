@@ -11,7 +11,6 @@ ZombieMonster::~ZombieMonster() {
 }
 
 void ZombieMonster::Update() {
-    TimeManager::GetInstance().Update();
     unsigned int elapsedTime = TimeManager::GetInstance().GetElapsedTime();
     this->SetX(this->GetX()+ (elapsedTime/1000.0));
     this->SetY(this->GetY() + (elapsedTime/1000.0));
